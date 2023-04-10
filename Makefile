@@ -29,6 +29,7 @@ endef
 # linking raw (and processed data) to each output
 $(eval $(call linkdata,ACS_2019_pop,ACS_2019_pop_data.csv))
 $(eval $(call linkdata,cdc_vax,cdc_covid-19_vax_data.csv ${RESDAT}/ACS_2019_pop.rds))
+$(eval $(call linkdata,us_outcomes,United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv COVID-19_Reported_Patient_Impact_and_Hospital_Capacity_by_State_Timeseries.csv ${RESDAT}/ACS_2019_pop.rds))
 
 # the actual target definition
 ${RESDAT}/%.rds: %.R | ${RESDAT}
